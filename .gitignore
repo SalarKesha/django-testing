@@ -1,2 +1,4 @@
 .idea/
 db.sqlie3
+*.pyc
+__pycache__

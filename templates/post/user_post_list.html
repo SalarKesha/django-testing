@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <form method="post" action="{% url 'create_post' %}">
+        {% csrf_token %}
+        <h2>{{ form.as_div }}</h2>
+        <button type="submit">submit</button>
+    </form>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <h3>{{ post.title }}</h3>
+                <h4>{{ post.content }}</h4>
+                <h4>{{ post.created_time }}</h4>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
